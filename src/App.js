@@ -13,9 +13,9 @@ export default function App() {
     const [win, setWin] = useState(0)
     const [lose, setLose] = useState(0)
     const choices = ['rock', 'paper', 'scissor']
-    const [value, setValue] = useState('');
+    const [value, setValue] = useState('')
     const test = (value) =>{
-        setUserChoice(value)};
+        setUserChoice(value)}
     const [randomChoice, setRandomChoice] = useState(null)
     return (
         <div className="app">

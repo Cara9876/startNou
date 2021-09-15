@@ -5,7 +5,7 @@ import Scissors from "../../icons/Scissors";
 
 const HandleClick = (value, props) => {
     useEffect(() => {
-    props.test(value);
+    props.test(value)
     }, [props, value])
 
     return (
