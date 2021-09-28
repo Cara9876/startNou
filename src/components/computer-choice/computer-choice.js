@@ -1,12 +1,12 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 
-const ComputerChoice = props => {
-    useEffect(() => {
-        props.setRandomChoice(props.choices[Math.floor(Math.random() * props.choices.length)])
-    },[props, props.randomChoice])
+const ComputerChoice = ({setComputerChoice, choices}) => {
     return (
         <div>
-            <button onClick={() => props.setComputerChoice(props.randomChoice)} className="computer-choice">?</button>
+            <button onClick={() => {
+                setComputerChoice(choices[Math.floor(Math.random() * choices.length)])
+            }} className="computer-choice">?
+            </button>
         </div>
     )
 }

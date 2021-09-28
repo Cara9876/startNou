@@ -1,41 +1,51 @@
 import React from 'react'
 import {useEffect} from "react";
+import {WinsLoses, Wins, Losses, Number} from "../../Styled/WinsLoses";
 
-const Play = props => {
+const Play = ({setSmShow, computerChoice, userChoice, setLose, setWin, lose, win, setUserChoice, setComputerChoice, draw, setDraw}) => {
 
-useEffect(() =>
-    {
-        switch (props.userChoice + props.computerChoice) {
+    useEffect(() => {
+        switch (userChoice + computerChoice) {
             case 'scissorspaper':
             case 'rockscissors':
             case 'paperrock':
-                props.setWin(props.win + 1)
+                setWin(win + 1)
+                setUserChoice("")
+                setComputerChoice("")
+                setSmShow(true)
                 break
             case 'paperscissors':
             case 'scissorsrock':
             case 'rockpaper':
-                props.setLose(props.lose +1)
+                setLose(lose + 1)
+                setUserChoice("")
+                setComputerChoice("")
+                setSmShow(true)
                 break
             case 'rockrock':
             case 'paperpaper':
             case 'scissorsscissors':
+                setUserChoice("")
+                setComputerChoice("")
+                setDraw(draw + 1)
+                setSmShow(true)
                 break
             default:
                 break;
         }
-}, [props, props.computerChoice, props.userChoice])
-    return(
-        <div className="wins-losses">
-            <div className="wins">
-                <span className="number" >{props.win}</span>
-                <span className="text">Wins</span>
-            </div>
+    }, [computerChoice, userChoice, win, lose, draw])
+    return (
+        <WinsLoses>
+            <Wins>
+                <Number>{win}</Number>
+                Wins
+            </Wins>
 
-            <div className="losses">
-                <span className="number">{props.lose}</span>
-                <span className="text">Losses</span>
-            </div>
-        </div>
+            <Losses>
+                <Number>{lose}</Number>
+                Losses
+            </Losses>
+        </WinsLoses>
     )
 }
 
