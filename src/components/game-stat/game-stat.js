@@ -27,11 +27,9 @@ const GameStat = ({
             >
                 <Modal.Header closeButton>
                     <Modal.Title id="example-modal-sizes-title-sm">
-                        <InfoStyled>
                             Wins: {win} <br/>
                             Losses: {lose} <br/>
                             Draws: {draw} <br/>
-                        </InfoStyled>
                     </Modal.Title>
                 </Modal.Header>
             </Modal>
